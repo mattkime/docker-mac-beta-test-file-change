@@ -9,10 +9,10 @@ RUN chown -R matt:matt /home/matt/app
 
 USER matt
 
+ENV NODE_PATH=/home/matt/node_modules
+
 WORKDIR /home/matt
 COPY package.json /home/matt/package.json
-
-ENV NODE_PATH=/home/matt/node_modules
 
 RUN npm install --only=prod
 
